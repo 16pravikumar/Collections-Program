@@ -1,0 +1,8 @@
+import java.util.*;
+public class FinalCountWords{
+    public static void main(String args[]){
+       String str="I I love love you";
+       Str split[]=str.split(" ");
+       System.out.println(split);
+    }
+}
