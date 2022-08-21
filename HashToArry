@@ -1,6 +1,6 @@
 // Find the word count frequency in the sentence
 import java.util.*;
-public class FinalCountWords{
+public class HashToArry{
     public static void main(String args[]){
        String str="I Love you";
        String split[]=str.split(" ");
