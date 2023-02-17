@@ -1,0 +1,61 @@
+// Find the Student details
+package com.mycompany.javap;
+import java.util.*;
+import java.sql.*;
+
+
+class student{
+   private int id;
+   private String name;
+   private int marks;
+
+    public student(int id, String name, int marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+   
+}
+
+public class Javap{
+  
+  
+    public static void main(String args[]) throws SQLException{ 
+        ArrayList<student> list=new ArrayList<>();
+        student std1=new student(1, "Praveen", 45);
+        student std2=new student(2, "Shaurbh", 29);
+         list.add(std1);
+         list.add(std2); 
+        for (student object : list) {
+            System.out.println(object.getId()+" "+object.getName()+" "+object.getMarks()); 
+        }
+      }
+    } 
+/* OutPut:-   
+   1 Praveen 45
+   2 Shaurbh 29
+*/
