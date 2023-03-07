@@ -1,0 +1,27 @@
+package javaProgram;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+// Maintain the Order of Inseration by LinkedHashMap
+public class javap {
+	public static void main(String[] args) {
+		String word="I I love I india love india";
+		String copy[]=word.split(" ");
+		LinkedHashMap<String,Integer> list=new LinkedHashMap<>();
+		for (String string : copy) { int c=0;
+			for(String it:copy) {
+				if(string.equals(it))
+					c++;
+			}list.put(string,c );
+		}
+		System.out.println(list);
+		System.out.println(list.keySet());
+		System.out.println(list.values());
+	}
+}
+/*Output
+ * {I=3, love=2, india=2}
+[I, love, india]
+[3, 2, 2]
+ */
