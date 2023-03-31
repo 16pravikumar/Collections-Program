@@ -1,0 +1,47 @@
+package basic;
+/*Given a list of employee class objects containing id, 
+name and salary, sort it in desc order
+ based on the salary
+*/
+import java.util.*;
+import java.io.*;
+class Student implements Comparable<Student> {
+public int id;
+public String name;
+public int salary;
+	Student(int id,String name,int salary){
+		this.id=id;
+		this.name=name;
+		this.salary=salary;	
+    }
+    public int compareTo(Student st){  
+if(salary==st.salary)  
+return 0;  
+else if(salary<st.salary)  
+return 1;  
+else  
+return -1;  
+}  
+}
+ public class javamain{
+	 public static void main(String[] args)  {
+	 ArrayList<Student> list=new ArrayList<Student>();
+		Student obj1=new Student(1,"praveen",10000);
+	    Student obj2=new Student(2,"priti",20000);
+		Student obj3=new Student(1,"dev",15000);
+		list.add(obj1);
+		list.add(obj2);
+		list.add(obj3);
+		Collections.sort(list);
+		for(Student s:list){
+		System.out.println(s.salary);
+		}
+	 
+ } 
+}
+/*Output:
+ *20000
+  15000
+  10000
+
+*/
