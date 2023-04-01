@@ -1,0 +1,46 @@
+package basic;
+/*1) Sort by Name using Comparator
+
+*/
+import java.util.*;
+import java.util.stream.Collectors;
+import java.io.*;
+ class Emp {
+	public String name;
+	public int age;
+	public int salary;
+	Emp(String name,int age, int salary){
+		this.name=name;
+		this.age=age;
+		this.salary=salary;
+	}
+	
+}
+ class NameComparator implements Comparator<Emp>{
+	 @Override
+		public int compare(Emp s1,Emp s2) {
+			// TODO Auto-generated method stub
+			return s1.name.compareTo(s2.name);
+			
+		}
+	 
+ }
+ public class javamain{
+	 
+	 public static void main(String[] args)   {
+		List<Emp> list=new ArrayList<Emp>();
+		list.add(new Emp("Praveen",27,34000));
+		list.add(new Emp("Bhanu",25,80000));
+		list.add(new Emp("Vikas",26,50000));
+		// Ascending order by Name
+		Collections.sort(list,new NameComparator());
+		for(Emp s:list)
+		System.out.println(s.name+" "+s.age+" "+s.salary);
+  } 
+}
+/*Output:
+Bhanu 25 80000
+Praveen 27 34000
+Vikas 26 50000
+
+*/
