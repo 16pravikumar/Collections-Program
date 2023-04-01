@@ -1,0 +1,94 @@
+package basic;
+/*1)Sort the Employee name -Ascending/Descending order
+
+*/
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class javamain {
+    private String name;
+    private int age;
+    private double salary;
+    
+    public javamain(String name, int age, double salary) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+	}
+
+	// constructor, getters and setters...
+    
+    public String getName() {
+		return name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public static void main(String[] args) {
+        ArrayList<javamain> employees = new ArrayList<>();
+        employees.add(new javamain("John", 30, 50000));
+        employees.add(new javamain("Alice", 25, 45000));
+        employees.add(new javamain("Bob", 35, 55000));
+        
+        // sort by name in ascending order
+        Collections.sort(employees, new Comparator<javamain>() {
+            @Override
+            public int compare(javamain e1, javamain e2) {
+                return e1.getName().compareTo(e2.getName());
+            }
+        });
+        
+        // print the sorted list
+        System.out.println("Employees sorted by name in ascending order:");
+        for (javamain employee : employees) {
+            System.out.println(employee.getName() + " " + employee.getAge() + " " + employee.getSalary());
+        }
+        
+        // sort by name in descending order
+        Collections.sort(employees, new Comparator<javamain>() {
+            @Override
+            public int compare(javamain e1, javamain e2) {
+                return e2.getName().compareTo(e1.getName());
+            }
+        });
+        
+        // print the sorted list
+        System.out.println("Employees sorted by name in descending order:");
+        for (javamain employee : employees) {
+            System.out.println(employee.getName() + " " + employee.getAge() + " " + employee.getSalary());
+        }
+    }
+}
+
+/*Output:
+Employees sorted by name in ascending order:
+Alice 25 45000.0
+Bob 35 55000.0
+John 30 50000.0
+Employees sorted by name in descending order:
+John 30 50000.0
+Bob 35 55000.0
+Alice 25 45000.0
+
+
+*/
